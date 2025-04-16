@@ -9,9 +9,14 @@ from IPython.display import display
 from datetime import datetime
 
 df = pd.read_csv("../data/raw/LOG.csv")
-# Filter rows to only include those in April and with Distance >= 700
-df['Timestamp'] = pd.to_datetime(df['Timestamp'])  # Ensure Timestamp is datetime
+df = df[~df['Timestamp'].astype(str).str.lower().str.contains("timestamp")]
+df['Distance_mm'] = pd.to_numeric(df['Distance_mm'], errors='coerce')
+df = df.dropna(subset=['Distance_mm'])
+df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+
 df = df[(df['Timestamp'].dt.month == 4) & (df['Distance_mm'] >= 700)]
+
+
 df.reset_index(drop=True, inplace=True)
 
 df['Timestamp'] = pd.to_datetime(df['Timestamp'])
