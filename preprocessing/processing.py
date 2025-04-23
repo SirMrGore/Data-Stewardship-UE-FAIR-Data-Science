@@ -89,6 +89,9 @@ test_mae = mean_absolute_error(y_test, y_test_pred)
 test_mse = mean_squared_error(y_test, y_test_pred)
 test_r2  = r2_score(y_test, y_test_pred)
 
+joblib.dump(model, "model/output_model.pkl")
+print("\nModel trained and saved.")
+
 print("\nTest Metrics (Approx 15% of data):")
 print(f"MAE: {test_mae:.2f}")
 print(f"MSE: {test_mse:.2f}")
