@@ -16,7 +16,7 @@ A machine learning model was trained to predict this activity using time-based f
 
 ## Contents
 
-- `TofActivity.ipynb`: Full data loading, preprocessing, training and evaluation
+- `TofActivity.ipynb`: Full data loading, training and evaluation
 - `output_model.pkl`: Trained gradient boosted regressor (scikit-learn, Poisson loss)
 - `test_predictions_plot.png`: Visual comparison of predicted vs actual activity
 - `codemeta.json`: Metadata describing model provenance and dependencies
@@ -55,8 +55,7 @@ The trained model and output visualizations are available on TUWRD:
 - **Evaluation plot**: `test_predictions_plot.png`  
 - **Metadata**: Includes CodeMeta and FAIR4ML-compliant fields
 
-[TUWRD Entry]() *(TODO)*
-
+[TUWRD](https://test.researchdata.tuwien.ac.at/doi/10.70124/jpvfd-wz811)
 ---
 
 ## Dependencies
